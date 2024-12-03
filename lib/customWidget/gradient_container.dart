@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_poc/customWidget/dice_roller.dart';
+import 'package:flutter_poc/customWidget/quizApp/quiz_App_main_screen.dart';
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key, required this.color1, required this.color2});
+  const GradientContainer(
+      {super.key, required this.color1, required this.color2});
 
   final Color color1;
   final Color color2;
 
   static const startAlignment = Alignment.topLeft;
   static const endAlignment = Alignment.bottomRight;
-
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +20,10 @@ class GradientContainer extends StatelessWidget {
         begin: startAlignment,
         end: endAlignment,
       )),
-      child: const Center(
-        child: DiceRoller()
-      ),
+      child: const Center(child: QuizAppMainScreen()
+          /// diceRoller is used for dice class check logic
+          // DiceRoller()
+          ),
     );
   }
 }
