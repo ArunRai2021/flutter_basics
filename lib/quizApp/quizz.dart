@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_poc/customWidget/quizApp/question_screen.dart';
-import 'package:flutter_poc/customWidget/quizApp/quiz_App_main_screen.dart';
+import 'package:flutter_poc/quizApp/question_screen.dart';
+import 'package:flutter_poc/quizApp/start_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -10,8 +10,13 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  // This widget is the root of your application.
-  Widget activeScreen = const QuizAppMainScreen();
+  Widget? activeScreen;
+
+  @override
+  void initState() {
+    activeScreen = const StartScreen();
+    super.initState();
+  }
 
   void switchScreen() {
     setState(() {
@@ -35,7 +40,7 @@ class _QuizState extends State<Quiz> {
               Color.fromARGB(255, 78, 13, 151),
               Color.fromARGB(255, 107, 15, 168)
             ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
-            child: const QuizAppMainScreen(),
+            child: activeScreen,
           ),
         ));
   }

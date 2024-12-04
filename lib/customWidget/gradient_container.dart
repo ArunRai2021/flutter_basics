@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_poc/customWidget/quizApp/quiz_App_main_screen.dart';
+import 'package:flutter_poc/customWidget/dice_roller.dart';
 
 class GradientContainer extends StatelessWidget {
   const GradientContainer(
@@ -20,7 +20,7 @@ class GradientContainer extends StatelessWidget {
         begin: startAlignment,
         end: endAlignment,
       )),
-      child: const Center(child: QuizAppMainScreen()
+      child: const Center(child: DiceRoller()
           /// diceRoller is used for dice class check logic
           // DiceRoller()
           ),
