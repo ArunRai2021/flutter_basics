@@ -1,4 +1,4 @@
-import 'package:flutter_poc/models/quiz_question.dart';
+import 'package:flutter_poc/quizApp/models/quiz_question.dart';
 
 List<QuizQuestion> questions = [
   QuizQuestion(
