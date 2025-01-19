@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_poc/ExpenseTracker/widget/chart/chart.dart';
 import 'package:flutter_poc/ExpenseTracker/widget/expensesList/expenses_list.dart';
 import 'package:flutter_poc/ExpenseTracker/model/expenseModel.dart';
 import 'package:flutter_poc/ExpenseTracker/widget/new_expenses.dart';
@@ -79,8 +80,11 @@ class _ExpensesState extends State<Expenses> {
                 onPressed: _openAddExpenseOverLay, icon: const Icon(Icons.add)),
           ]),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [Expanded(child: mainContent)],
+        // crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Chart(expenses: _registeredExpenses),
+          Expanded(child: mainContent)
+        ],
       ),
     );
   }
