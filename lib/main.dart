@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_poc/ExpenseTracker/widget/expenses.dart';
+
+import 'ExpenseTracker/widget/expenses.dart';
 
 /// this main method is for Quiz app
 // void main() {
 //   runApp(const Quiz());
 // }
+
+/// this main Method is Used for Dice Roller app
+// void main() {
+//   runApp(const MaterialApp(
+//     debugShowCheckedModeBanner: false,
+//     home: GradientContainer(color1: Colors.yellow, color2: Colors.black),
+//   ));
+// }
+
 var kColorScheme =
     ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 96, 59, 181));
 
@@ -14,6 +24,11 @@ var kDarkColorScheme = ColorScheme.fromSeed(
 
 /// this main Method is For Expense Tracker App
 void main() {
+  /// this is only for Portrait mode ..
+  // WidgetsFlutterBinding.ensureInitialized();
+  // SystemChrome.setPreferredOrientations([
+  //   DeviceOrientation.portraitUp,
+  // ]).then((fn) {
   runApp(MaterialApp(
       darkTheme: ThemeData.dark().copyWith(
         useMaterial3: true,
@@ -45,4 +60,5 @@ void main() {
                   fontSize: 16))),
       debugShowCheckedModeBanner: false,
       home: const Expenses()));
+  // });
 }
