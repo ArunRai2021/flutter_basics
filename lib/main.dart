@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_poc/todoApp/todo_app.dart';
+import 'package:flutter_poc/mealApp/screen/tabs.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import 'ExpenseTracker/widget/expenses.dart';
+import 'mealApp/screen/categories.dart';
 
-/// this main method is for Quiz app
+/// this main method is for Quiz app(5-7line no)
 // void main() {
 //   runApp(const Quiz());
 // }
 
-/// this main Method is Used for Dice Roller app
+/// this main Method is Used for Dice Roller app(10-15 line no)
 // void main() {
 //   runApp(const MaterialApp(
 //     debugShowCheckedModeBanner: false,
 //     home: GradientContainer(color1: Colors.yellow, color2: Colors.black),
 //   ));
 // }
-
-var kColorScheme =
-    ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 96, 59, 181));
-
-var kDarkColorScheme = ColorScheme.fromSeed(
-    brightness: Brightness.dark,
-    seedColor: const Color.fromARGB(255, 5, 99, 125));
+/// part of Expense tracker App (16-63 line no)
+// var kColorScheme =
+//     ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 96, 59, 181));
+//
+// var kDarkColorScheme = ColorScheme.fromSeed(
+//     brightness: Brightness.dark,
+//     seedColor: const Color.fromARGB(255, 5, 99, 125));
 
 /// this main Method is For Expense Tracker App
 // void main() {
@@ -63,7 +64,31 @@ var kDarkColorScheme = ColorScheme.fromSeed(
 //       home: const Expenses()));
 //   // });
 // }
-/// this main is used for todoApp
+/// this main is used for todoApp(65-67)
+// void main() {
+//   runApp(const TodoApp());
+// }
+
+/// meal App
 void main() {
-  runApp(const TodoApp());
+  runApp(const App());
+}
+
+final theme = ThemeData(
+    useMaterial3: true,
+    colorScheme: ColorScheme.fromSeed(
+        brightness: Brightness.dark,
+        seedColor: const Color.fromARGB(255, 131, 57, 0)),
+    textTheme: GoogleFonts.latoTextTheme());
+
+class App extends StatelessWidget {
+  const App({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        theme: theme,
+        debugShowCheckedModeBanner: false,
+        home: const TabsScreen());
+  }
 }
