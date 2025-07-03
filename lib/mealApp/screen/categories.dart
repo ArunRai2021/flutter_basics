@@ -6,8 +6,8 @@ import 'package:flutter_poc/mealApp/widget/category_grid_item.dart';
 import 'package:flutter_poc/mealApp/models/category.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key, required this.onToggleFavorite, required this.availableMeals});
-  final void Function (Meal meal) onToggleFavorite;
+  const CategoriesScreen({super.key, required this.availableMeals});
+
   final List<Meal> availableMeals;
 
   void _selectCategory(BuildContext context, MealCategory category) {
@@ -17,8 +17,8 @@ class CategoriesScreen extends StatelessWidget {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (BuildContext context) {
       return MealsScreen(
-          title: category.title, meals: filteredMeals,
-        onToggleFavorite: onToggleFavorite,
+        title: category.title,
+        meals: filteredMeals,
       );
     }));
   }
