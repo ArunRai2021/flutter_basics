@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_poc/mealApp/screen/tabs.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_poc/shoppingList/widget/groceries_list.dart';
 
-import 'mealApp/screen/categories.dart';
 
 /// this main method is for Quiz app(5-7line no)
 // void main() {
@@ -71,25 +68,49 @@ import 'mealApp/screen/categories.dart';
 // }
 
 /// meal App
+// void main() {
+//   runApp(const ProviderScope(child: App()));
+// }
+//
+// final theme = ThemeData(
+//     useMaterial3: true,
+//     colorScheme: ColorScheme.fromSeed(
+//         brightness: Brightness.dark,
+//         seedColor: const Color.fromARGB(255, 131, 57, 0)),
+//     textTheme: GoogleFonts.latoTextTheme());
+//
+// class App extends StatelessWidget {
+//   const App({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         theme: theme,
+//         debugShowCheckedModeBanner: false,
+//         home: const TabsScreen());
+//   }
+// }
+/// shopping List App
 void main() {
-  runApp(const ProviderScope(child: App()));
+  runApp(const MyApp());
 }
 
-final theme = ThemeData(
-    useMaterial3: true,
-    colorScheme: ColorScheme.fromSeed(
-        brightness: Brightness.dark,
-        seedColor: const Color.fromARGB(255, 131, 57, 0)),
-    textTheme: GoogleFonts.latoTextTheme());
-
-class App extends StatelessWidget {
-  const App({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: theme,
-        debugShowCheckedModeBanner: false,
-        home: const TabsScreen());
+      debugShowCheckedModeBanner: false,
+      title: "Flutter Groceries",
+      theme: ThemeData.dark().copyWith(
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: const Color.fromARGB(255, 147, 229, 250),
+              brightness: Brightness.dark,
+              surface: const Color.fromARGB(255, 42, 51, 59)),
+          scaffoldBackgroundColor: const Color.fromARGB(255, 50, 58, 60)),
+      home: const GroceriesList(),
+    );
   }
 }
